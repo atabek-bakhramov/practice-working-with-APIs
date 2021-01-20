@@ -8,8 +8,7 @@ const button = document.getElementById('kill-random-lord-button');
 async function runMain(url, array) {
     await Promise.all(array.map(async userId => {
         const houseNameResult = await fetchData(url, userId);
-        // console.log(houseNameResult);
-        const { container } = createContainer();
+        const container = createContainer();
         createHouse(houseNameResult.name, container);
         if (houseNameResult.currentLord !== '') {
             const lordNameResult = await fetchData(houseNameResult.currentLord);
@@ -33,9 +32,7 @@ function createContainer() {
     const container = document.createElement('div');
     container.classList.add('got-house');
     body.appendChild(container);
-    return {
-        container
-    }
+    return container;
 }
 
 function createHouse(houseName, container) {
