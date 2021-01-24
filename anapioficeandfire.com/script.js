@@ -51,18 +51,18 @@ function createLord(lordName, houseId, container) {
 }
 
 button.addEventListener('click', async function () {
-    const randomIndex = getRandomNumber(houseIdList);
+    const randomIndex = getRandomIndex(houseIdList);
     const randomHouseId = houseIdList[randomIndex];
     const houseLink = await fetchData(houseUrl, randomHouseId);
     const swornMembersList = houseLink.swornMembers;
-    const randomIndexOfMembers = getRandomNumber(swornMembersList);
+    const randomIndexOfMembers = getRandomIndex(swornMembersList);
     const randomSwornMemberLink = swornMembersList[randomIndexOfMembers];
     const nameOfSwornMember = await fetchData(randomSwornMemberLink);
     const lordHolder = document.getElementById(randomHouseId);
     lordHolder.innerText = nameOfSwornMember.name;
 })
 
-function getRandomNumber(array) {
+function getRandomIndex(array) {
     const randomIndex = Math.floor(Math.random() * array.length);
     return randomIndex;
-}
+}   
