@@ -6,3 +6,11 @@
 https://atabek-bakhramov.github.io/practice-working-with-APIs/game-of-thrones/index.html
 
 
+
+# Q&A
+
+
+### Learn more and have fun!
+
+https://atabek-bakhramov.github.io/practice-working-with-APIs/q&a/index.html
+
